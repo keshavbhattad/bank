@@ -39,8 +39,9 @@ jobs:
     
     - name: Get and set versions from secret
       run: |
-        echo ${{ env.VERSION }}
-        echo "VERSION=0.3.0" >> $GITHUB_ENv
+        echo ${{ github.event.head_commit.message }}
+        echo ${{ vars.VERSION }}
+        echo "VERSION=0.3.0" >> $GITHUB_ENV
 
     - name: Install go-migrate
       run: |
