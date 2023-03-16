@@ -41,7 +41,7 @@ jobs:
       run: |
         echo ${{ github.event.head_commit.message }}
         echo ${{ vars.VERSION }}
-        ${{ vars.VERSION }}="0.3.0"
+        echo "VERSION=0.3.0" >> $GITHUB_VARS
 
     - name: Install go-migrate
       run: |
